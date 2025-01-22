@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene >
+        <a-assets>
+            <img id="texturemur" src="/assets/TEXTURE/stone_tile_wall.webp">
+            <a-asset-item id="masquemat" src="/assets/GLB/Masque-maitredujeu.glb"></a-asset-item>
+            <a-asset-item id="masquebrille" src="/assets/GLB/Masque-maitredujeubrillant.glb"></a-asset-item>
+            <a-asset-item id="masqueterni" src="/assets/GLB/Masque-maitredujeumétalterni.glb"></a-asset-item>
+            <a-asset-item id="masquepoli" src="/assets/GLB/Masque-maitredujeumétalpoli.glb"></a-asset-item>
+            <a-asset-item id="cercueilcouvercle" src="/assets/GLB/cercueil-couvercle.glb"></a-asset-item>
+            <a-asset-item id="cercueil" src="/assets/GLB/cercueil.glb"></a-asset-item>  
+            <a-asset-item id="carré" src="/assets/GLB/carré.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity gltf-model="#masquemat" rotation="0 0 0" position="0 1 -5" scale="1 1 1" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-entity>
+        
+        <!-- <a-box rotation="0 0 90" position="5 2 -5" scale="4 0.1 8" color="#505050"></a-box>
+        <a-box rotation="0 0 90" position="-5 2 -5" scale="4 0.1 8" color="#505050"></a-box> 
+     <a-box rotation="0 0 0" position="0 4 -5" scale="10 0.1 8" color="#505050"></a-box>-->
+        <a-box rotation="0 0 0" position="0 0 -5" scale="10 0.1 8" color="#000000" material="metalness: 0.1; roughness: 0"></a-box>   
+        <a-entity gltf-model="#cercueilcouvercle" rotation="0 -90 0" position="0 0 -5" scale="0.2 0.2 0.2"></a-entity>
+
+        <a-entity gltf-model="#carré" rotation="0 0 0" position="0 1 -7" scale="0.1 0.1 0.1"></a-entity>
+        <a-box rotation="90 0 0" position="0 2 -9" scale="10 0.1 4" color="#"></a-box>
+        <a-sky src="" color="#"></a-sky>
+    </a-scene>
+</body>
+
+</html>
