@@ -11,8 +11,9 @@
             <a-asset-item id="masquemat" src="./assets/glb/Masque-maitredujeu.glb"></a-asset-item>
             <a-asset-item id="cercueilcouvercle" src="./assets/glb/cercueil-couvercle.glb"></a-asset-item>
             <a-asset-item id="cercueil" src="./assets/glb/cercueil.glb"></a-asset-item>  
-            <a-asset-item id="carré" src="./assets/glb/carré.glb"></a-asset-item>
-            <a-asset-item id="cercle" src="./assets/glb/cercle.glb"></a-asset-item>
+            <a-asset-item id="carre" src="./assets/glb/carre.glb"></a-asset-item>
+            <a-asset-item id="rond" src="./assets/glb/rond.glb"></a-asset-item>
+            <a-asset-item id="triangle" src="./assets/glb/triangle.glb"></a-asset-item>
         </a-assets>
 
         <a-entity gltf-model="#masquemat" rotation="0 0 0" position="0 1 -5" scale="1 1 1" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-entity>
@@ -23,8 +24,10 @@
         <a-box rotation="0 0 0" position="0 0 -5" scale="10 0.1 8" color="#000000" material="metalness: 0.1; roughness: 0"></a-box>   
         <a-entity gltf-model="#cercueilcouvercle" rotation="0 -90 0" position="0 0 -5" scale="0.2 0.2 0.2"></a-entity>
 
-        <a-entity gltf-model="#carré" rotation="0 0 0" position="0 1 -7" scale="0.1 0.1 0.1"></a-entity>
-        <a-entity gltf-model="#cercle" rotation="0 0 0" position="2 1 -7" scale="0.1 0.1 0.1"></a-entity>
+        <a-entity gltf-model="#carre" rotation="0 0 0" position="7.5 1 -7" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#rond" rotation="0 0 0" position="5 1 -7" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#triangle" rotation="0 0 0" position="10 1 -7" scale="1 1 1"></a-entity>
+
         <a-box rotation="90 0 0" position="0 2 -9" scale="10 0.1 4" color="#"></a-box>
         <a-sky color="#"></a-sky>
     </a-scene>
