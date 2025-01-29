@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <a-scene fog="type: exponential; color: #000000; density: 0.1">
+    <a-scene >
         <a-assets>
             <!-- <img id="texturesol" src="./assets/TEXTURE/Ground079L_1K-PNG_Color.png"> -->
             <a-asset-item id="masquemat" src="./assets/glb/Masque-maitredujeu.glb"></a-asset-item>
@@ -14,16 +14,51 @@
             <a-asset-item id="triangle" src="./assets/glb/triangle.glb"></a-asset-item>
             <a-asset-item id="porte" src="./assets/glb/porte.glb"></a-asset-item>
             <a-asset-item id="cercueil" src="./assets/glb/cercueil.glb"></a-asset-item>
+            <a-asset-item id="masque-carre" src="./assets/glb/masque-carre.glb"></a-asset-item>
+            <a-asset-item id="masque-rond" src="./assets/glb/masque-rond.glb"></a-asset-item>
+            <a-asset-item id="masque-triangle" src="./assets/glb/masque-triangle.glb"></a-asset-item>
+            <a-asset-item id="canape" src="./assets/glb/canapé.glb"></a-asset-item>
+            <a-asset-item id="table-basse" src="./assets/glb/table-basse.glb"></a-asset-item>
+            <a-asset-item id="table-chevet" src="./assets/glb/table-de-chevet.glb"></a-asset-item>
         </a-assets>
 
-        <!-- CIEL -->
-        <a-sky  color="#"></a-sky>  
+        <!-- SON SOLDAT -->
+        <!-- <a-entity light="type: spot; color: #ffffff" position="0 5 0"></a-entity> -->
 
-        <!-- MASQUE -->
+        <!-- SON SOLDAT -->
+        <a-sound src="./assets/Pink-soldier_Song.mp3" autoplay="true" loop="true" volume="0.5" position=""></a-sound>
+
+        <!-- CIEL -->
+        <a-sky color="#"></a-sky>
+
+        <!-- CANAPÉ -->
+        <a-entity gltf-model="#canape" rotation="0 90 0" position="9 0.5 -10" scale="3 3 3"></a-entity>
+
+        <!-- TABLE BASSE -->
+        <a-entity gltf-model="#table-basse" rotation="0 90 0" position="9 0.6 -10" scale="2 2 2"></a-entity>
+
+        <!-- TABLE DE CHEVET -->
+        <a-entity gltf-model="#table-chevet" rotation="0 90 0" position="9 0.6 -10" scale="2 2 2"></a-entity>
+
+        <!-- MASQUE MAITRE DU JEU -->
         <a-entity gltf-model="#masquemat" rotation="0 0 0" position="0 1 -5" scale="1 1 1"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-entity>
+
+        <!-- MASQUE SOLDATS -->
+        <a-entity gltf-model="#masque-carre" rotation="0 -90 0" position="3 0.5 -17.5" scale="0.07 0.07 0.07"
+            animation="property: rotation; to: 0 270 0; loop: true; dur: 10000; easing: linear"
+            animation__float="property: position; dir: alternate; dur: 2500; easing: easeInOutSine; loop: true; to: 3 0.8 -17.5"></a-entity>
+
+        <a-entity gltf-model="#masque-rond" rotation="0 -90 0" position="-3 0.5 -17.5" scale="0.07 0.07 0.07"
+            animation="property: rotation; to: 0 270 0; loop: true; dur: 10000; easing: linear"
+            animation__float="property: position; dir: alternate; dur: 2500; easing: easeInOutSine; loop: true; to: -3 0.8 -17.5"></a-entity>
+
+        <a-entity gltf-model="#masque-triangle" rotation="0 -90 0" position="0 0.5 -17.5" scale="0.07 0.07 0.07"
+            animation="property: rotation; to: 0 270 0; loop: true; dur: 10000; easing: linear"
+            animation__float="property: position; dir: alternate; dur: 2500; easing: easeInOutSine; loop: true; to: 0 0.8 -17.5"></a-entity>
+
         <!-- CERCUEIL -->
-        <a-entity gltf-model="#cercueil" rotation="0 -90 0" position="0 0 -10" scale="0.2 0.2 0.2"></a-entity>
+        <a-entity gltf-model="#cercueil" rotation="0 -90 0" position="0 0 0" scale="0.2 0.2 0.2"></a-entity>
 
         <!-- PORTE DEVANT -->
         <a-entity gltf-model="#porte" rotation="0 90 0" position="0 1.9 -5" scale="0.2 0.12 0.12"></a-entity>
@@ -35,32 +70,62 @@
 
         <!-- RAMBARDE -->
         <a-entity rotation="0 0 0" position="0 0 0">
-        <a-box rotation="0 90 0" position="0.88 0 -4.6" scale="0.4 2 0.15" color="#F991D4"></a-box>
-        <a-box rotation="0 90 0" position="0.88 0 -4.2" scale="0.4 1.5 0.15" color="#F991D4"></a-box>
-        <a-box rotation="0 90 0" position="0.88 0 -3.8" scale="0.4 1 0.15" color="#F991D4"></a-box>
-        <a-box rotation="0 90 0" position="0.88 0 -3.4" scale="0.4 0.5 0.15" color="#F991D4"></a-box>
-    </a-entity>
+            <a-box rotation="0 90 0" position="0.88 0 -4.6" scale="0.4 2 0.15" color="#F991D4"></a-box>
+            <a-box rotation="0 90 0" position="0.88 0 -4.2" scale="0.4 1.5 0.15" color="#F991D4"></a-box>
+            <a-box rotation="0 90 0" position="0.88 0 -3.8" scale="0.4 1 0.15" color="#F991D4"></a-box>
+            <a-box rotation="0 90 0" position="0.88 0 -3.4" scale="0.4 0.5 0.15" color="#F991D4"></a-box>
+        </a-entity>
 
-    <a-entity rotation="0 0 0" position="-1.78 0 0">
-        <a-box rotation="0 90 0" position="0.88 0 -4.6" scale="0.4 2 0.15" color="#F991D4"></a-box>
-        <a-box rotation="0 90 0" position="0.88 0 -4.2" scale="0.4 1.5 0.15" color="#F991D4"></a-box>
-        <a-box rotation="0 90 0" position="0.88 0 -3.8" scale="0.4 1 0.15" color="#F991D4"></a-box>
-        <a-box rotation="0 90 0" position="0.88 0 -3.4" scale="0.4 0.5 0.15" color="#F991D4"></a-box>
-    </a-entity>
+        <a-entity rotation="0 0 0" position="-1.78 0 0">
+            <a-box rotation="0 90 0" position="0.88 0 -4.6" scale="0.4 2 0.15" color="#F991D4"></a-box>
+            <a-box rotation="0 90 0" position="0.88 0 -4.2" scale="0.4 1.5 0.15" color="#F991D4"></a-box>
+            <a-box rotation="0 90 0" position="0.88 0 -3.8" scale="0.4 1 0.15" color="#F991D4"></a-box>
+            <a-box rotation="0 90 0" position="0.88 0 -3.4" scale="0.4 0.5 0.15" color="#F991D4"></a-box>
+        </a-entity>
 
         <!-- SIGNES -->
-        <a-entity gltf-model="#carre" rotation="0 0 0" position="-3 3.1 -15" scale="0.2 0.2 0.2"></a-entity>
-        <a-entity gltf-model="#rond" rotation="0 0 0" position="3 3.1 -15" scale="0.2 0.2 0.2"></a-entity>
-        <a-entity gltf-model="#triangle" rotation="0 0 0" position="0 3.1 -15" scale="0.2 0.2 0.2"></a-entity>
+        <a-entity gltf-model="#carre" rotation="0 0 0" position="3 3.1 -15" scale="0.2 0.2 0.4"></a-entity>
+        <a-entity gltf-model="#rond" rotation="0 0 0" position="-3 3.1 -15" scale="0.2 0.2 0.4"></a-entity>
+        <a-entity gltf-model="#triangle" rotation="0 0 0" position="0 3.1 -15" scale="0.2 0.2 0.4"></a-entity>
 
-        <!-- Plafond -->
-        <a-box rotation="0 0 0" position="0 4 -10" scale="10 0.1 10" color="#000000"></a-box>
+        <!-- MOTIF MUR -->
+        <a-entity position="1.3 -0.3 -5" scale="0.15 1 0.15" rotation="90 0 0">
+            <a-entity gltf-model="#carre" rotation="90 0 180" position="0 0 -10.8" scale="0.35 0.35 0.2"></a-entity>
+            <a-entity gltf-model="#rond" rotation="90 0 180" position="0 0 -13" scale="0.3 0.3 0.2"></a-entity>
+            <a-entity gltf-model="#rond" rotation="90 0 180" position="0 0 -10" scale="0.35 0.35 0.2"></a-entity>
+            <a-entity gltf-model="#triangle" rotation="90 0 180" position="0 0 -12.5" scale="0.3 0.3 0.2"></a-entity>
+        </a-entity>
+
+        <a-entity position="-1.3 -0.3 -5" scale="0.15 1 0.15" rotation="90 0 0">
+            <a-entity gltf-model="#carre" rotation="90 0 180" position="0 0 -10.8" scale="0.35 0.35 0.2"></a-entity>
+            <a-entity gltf-model="#rond" rotation="90 0 180" position="0 0 -13" scale="0.3 0.3 0.2"></a-entity>
+            <a-entity gltf-model="#rond" rotation="90 0 180" position="0 0 -10" scale="0.35 0.35 0.2"></a-entity>
+            <a-entity gltf-model="#triangle" rotation="90 0 180" position="0 0 -12.5" scale="0.3 0.3 0.2"></a-entity>
+        </a-entity>
+
+
+        <!-- PLAFOND -->
+        <a-box rotation="0 0 0" position="0 4 -10" scale="10 0.1 10" color="#F991D4"></a-box>
+
+        <!-- SALLES DES MASQUES-->
+        <a-box rotation="0 0 0" position="0 4 -17.5" scale="9 0.1 5" color="#F991D4"></a-box>
+        <a-box rotation="90 0 0" position="0 2 -19" scale="9 0.1 4" color="#F991D4"></a-box>
+        <a-box rotation="0 0 90" position="4.5 2 -17.5" scale="4 0.1 5" color="#F991D4"></a-box>
+        <a-box rotation="0 0 90" position="-4.5 2 -17.5" scale="4 0.1 5" color="#F991D4"></a-box>
+        <a-box rotation="0 0 90" position="-1.5 2 -17.5" scale="4 0.1 5" color="#F991D4"></a-box>
+        <a-box rotation="0 0 90" position="1.5 2 -17.5" scale="4 0.1 5" color="#F991D4"></a-box>
+
+        <!-- SALLES DU MAITRE-->
+        <a-box rotation="90 0 90" position="12 2 -10" scale="6 0.1 4" color="#F991D4"></a-box>
+        <a-box rotation="90 0 0" position="8.5 2 -13" scale="7 0.1 4" color="#F991D4"></a-box>
+        <a-box rotation="90 0 0" position="8.5 2 -7" scale="7 0.1 4" color="#F991D4"></a-box>
+        <a-box rotation="0 0 0" position="8 0 -10" scale="8 0.1 6" color="#4992B3"></a-box>
 
         <!-- SOL -->
-        <a-box rotation="0 0 0" position="0 0 -10" scale="20 0.1 20" color="#4992B3" ></a-box>
+        <a-box rotation="0 0 0" position="0 0 -10" scale="10 0.1 20" color="#4992B3"></a-box>
 
         <!-- MUR DE DERRIERE -->
-        <a-entity position="0 0 -10" rotation="0 0 0" >
+        <a-entity position="0 0 -10" rotation="0 0 0">
             <a-box rotation="90 0 0" position="-4.4 2 -5" scale="1.3 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="4.3 2 -5" scale="1.3 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="-1.5 2 -5" scale="1.5 0.1 4" color="#FFF2A2"></a-box>
@@ -75,7 +140,7 @@
         </a-entity>
 
         <!-- MUR DE GAUCHE -->
-        <a-entity position="0 0 -10" rotation="0 90 0" >
+        <a-entity position="0 0 -10" rotation="0 90 0">
             <a-box rotation="90 0 0" position="-2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="0 3.3 -5" scale="2 0.1 1.4" color="#FFF2A2"></a-box>
@@ -84,7 +149,7 @@
         </a-entity>
 
         <!-- MUR DE DROITE -->
-        <a-entity position="10 0 -10" rotation="0 90 0" >
+        <a-entity position="10 0 -10" rotation="0 90 0">
             <a-box rotation="90 0 0" position="-2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="0 3.3 -5" scale="2 0.1 1.4" color="#FFF2A2"></a-box>
@@ -95,7 +160,7 @@
 
         <!-- MUR DE DEVANT -->
 
-        <a-entity position="0 0 0" rotation="0 0 0" >
+        <a-entity position="0 0 0" rotation="0 0 0">
             <a-box rotation="90 0 0" position="-2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="0 3.3 -5" scale="2 0.1 1.4" color="#FFF2A2"></a-box>
