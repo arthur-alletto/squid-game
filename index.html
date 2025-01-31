@@ -5,10 +5,8 @@
 </head>
 
 <body>
-    <a-scene >
+    <a-scene>
         <a-assets>
-            <!-- <img id="texturesol" src="./assets/TEXTURE/Ground079L_1K-PNG_Color.png"> -->
-            <a-asset-item id="masquemat" src="./assets/glb/Masque-maitredujeu.glb"></a-asset-item>
             <a-asset-item id="carre" src="./assets/glb/carre.glb"></a-asset-item>
             <a-asset-item id="rond" src="./assets/glb/rond.glb"></a-asset-item>
             <a-asset-item id="triangle" src="./assets/glb/triangle.glb"></a-asset-item>
@@ -22,15 +20,38 @@
             <a-asset-item id="table-chevet" src="./assets/glb/table-de-chevet.glb"></a-asset-item>
             <a-asset-item id="verre-whisky" src="./assets/glb/Whisky.glb"></a-asset-item>
             <a-asset-item id="tele" src="./assets/glb/tele.glb"></a-asset-item>
+            <a-asset-item id="maitre-masque" src="./assets/glb/maitre-masque.glb"></a-asset-item>
+            <a-asset-item id="piedestal" src="./assets/glb/piedestal.glb"></a-asset-item>
+            <a-asset-item id="pistol" src="./assets/glb/pistol.glb"></a-asset-item>
+            <img id="image-tele" src="./assets/image 34.png" />
         </a-assets>
 
-        <!-- LUMIERES -->
+        <!-- CAMÉRA -->
+        <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
 
-        <!-- SON SOLDAT -->
-        <a-sound src="./assets/Pink-soldier_Song.mp3" autoplay="true" loop="true" volume="0.5" position=""></a-sound>
+        <!-- SON MAITRE DU JEU -->
+        <a-sound src="./assets/Joo Won - Fly Me To The Moon.mp3" autoplay="true" loop="true" volume="1"
+            position="12 1 -10" distanceModel="linear" maxDistance="0.5" rolloffFactor="20" refDistance="10"></a-sound>
 
+        <!-- PIEDESTAL -->
+        <a-entity gltf-model="#piedestal" rotation="0 0 0" position="0 0.3 -18" scale="2 1.2 2"></a-entity>
+
+        <a-entity gltf-model="#piedestal" rotation="0 0 0" position="-3 0.3 -18" scale="2 1.2 2"></a-entity>
+
+        <a-entity gltf-model="#piedestal" rotation="0 0 0" position="3 0.3 -18" scale="2 1.2 2"></a-entity>
+
+        <a-image src="#image-tele" rotation="0 90 0" position="12.92 2.01 -9.85" scale="3.02 1.67 1"></a-image>
         <!-- CIEL -->
         <a-sky color="#"></a-sky>
+
+        <!-- MASQUE MAITRE -->
+        <a-entity gltf-model="#maitre-masque" rotation="0 -50 45" position="10 0.7 -10.15"
+            scale="0.07 0.07 0.07"></a-entity>
+        <a-light type="spot" rotation="-90 0 0" color="#FFFFFF" intensity="1" position="10 2 -10" angle="30"
+            penumbra="0.2"></a-light>
+
+        <!-- PISTOL -->
+        <a-entity gltf-model="#pistol" rotation="0 -200 90" position="10.1 0.6 -9.7" scale="0.5 0.5 0.5"></a-entity>
 
         <!-- TELE -->
         <a-entity gltf-model="#tele" rotation="0 180 0" position="13.03 2 -8.3" scale="3.5 3.5 3.5"></a-entity>
@@ -47,26 +68,43 @@
         <!-- TABLE DE CHEVET -->
         <a-entity gltf-model="#table-chevet" rotation="0 -90 0" position="13.8 1.3 -6.9" scale="6.5 5 5"></a-entity>
 
-        <!-- MASQUE MAITRE DU JEU -->
-        <a-entity gltf-model="#masquemat" rotation="0 0 0" position="0 1 -5" scale="1 1 1"
-            animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-entity>
+        <!-- PORTE MAITRE -->
+        <a-entity gltf-model="#porte" rotation="0 0 0" position="5 1.9 -10" scale="0.2 0.12 0.12"></a-entity>
 
         <!-- MASQUE SOLDATS -->
         <a-entity gltf-model="#masque-carre" rotation="0 -90 0" position="3 0.5 -17.5" scale="0.07 0.07 0.07"
             animation="property: rotation; to: 0 270 0; loop: true; dur: 10000; easing: linear"
             animation__float="property: position; dir: alternate; dur: 2500; easing: easeInOutSine; loop: true; to: 3 0.8 -17.5"></a-entity>
+        <a-light type="spot" rotation="-90 0 0" color="#FFFFFF" intensity="0.5" position="3 2 -17.5" angle="35"
+            penumbra="0.2"></a-light>
+        <a-light type="point" color="#FFFFFF" intensity="0.1" position="3 2 -17.5"></a-light>
+
 
         <a-entity gltf-model="#masque-rond" rotation="0 -90 0" position="-3 0.5 -17.5" scale="0.07 0.07 0.07"
             animation="property: rotation; to: 0 270 0; loop: true; dur: 10000; easing: linear"
             animation__float="property: position; dir: alternate; dur: 2500; easing: easeInOutSine; loop: true; to: -3 0.8 -17.5"></a-entity>
+        <a-light type="spot" rotation="-90 0 0" color="#FFFFFF" intensity="0.5" position="-3 2 -17.5" angle="35"
+            penumbra="0.2"></a-light>
+        <a-light type="point" color="#FFFFFF" intensity="0.1" position="-3 2 -17.5"></a-light>
 
         <a-entity gltf-model="#masque-triangle" rotation="0 -90 0" position="0 0.5 -17.5" scale="0.07 0.07 0.07"
             animation="property: rotation; to: 0 270 0; loop: true; dur: 10000; easing: linear"
             animation__float="property: position; dir: alternate; dur: 2500; easing: easeInOutSine; loop: true; to: 0 0.8 -17.5"></a-entity>
+        <a-light type="spot" rotation="-90 0 0" color="#FFFFFF" intensity="0.5" position="0 2 -17.5" angle="35"
+            penumbra="0.2"></a-light>
+        <a-light type="point" color="#FFFFFF" intensity="0.1" position="0 2 -17.5"></a-light>
+
 
         <!-- CERCUEIL -->
-        <a-entity gltf-model="#cercueil" rotation="0 -90 0" position="0 0 0" scale="0.2 0.2 0.2"></a-entity>
-
+        <a-entity position="0 0 1">
+            <a-entity gltf-model="#cercueil" rotation="-80 -90 0" position="-4.8 1 -8.3" scale="0.2 0.2 0.2"></a-entity>
+            <a-entity gltf-model="#cercueil" rotation="0 180 0" position="-4.5 0 -10" scale="0.2 0.2 0.2"></a-entity>
+            <a-entity gltf-model="#cercueil" rotation="10 -180 0" position="-4.5 0.6 -12"
+                scale="0.2 0.2 0.2"></a-entity>
+            <a-entity gltf-model="#cercueil" rotation="0 180 0" position="-4.5 0.3 -10.5    "
+                scale="0.2 0.2 0.2"></a-entity>
+            <a-entity gltf-model="#cercueil" rotation="0 180 0" position="-4.5 0 -12.4" scale="0.2 0.2 0.2"></a-entity>
+        </a-entity>
         <!-- PORTE DEVANT -->
         <a-entity gltf-model="#porte" rotation="0 90 0" position="0 1.9 -5" scale="0.2 0.12 0.12"></a-entity>
 
@@ -102,6 +140,7 @@
             <a-entity gltf-model="#rond" rotation="90 0 180" position="0 0 -10" scale="0.35 0.35 0.2"></a-entity>
             <a-entity gltf-model="#triangle" rotation="90 0 180" position="0 0 -12.5" scale="0.3 0.3 0.2"></a-entity>
         </a-entity>
+        <a-light type="point" color="#FFFFFF" intensity="0.1" position="0 0 5"></a-light>
 
         <a-entity position="-3 -6 -5" scale="0.7 1 0.7" rotation="90 0 0">
             <a-entity gltf-model="#carre" rotation="90 0 180" position="0 0 -10.8" scale="0.35 0.35 0.2"></a-entity>
@@ -109,7 +148,6 @@
             <a-entity gltf-model="#rond" rotation="90 0 180" position="0 0 -10" scale="0.35 0.35 0.2"></a-entity>
             <a-entity gltf-model="#triangle" rotation="90 0 180" position="0 0 -12.5" scale="0.3 0.3 0.2"></a-entity>
         </a-entity>
-
 
         <!-- PLAFOND -->
         <a-box rotation="0 0 0" position="0 4 -10" scale="10 0.1 10" color="#F991D4"></a-box>
@@ -123,14 +161,15 @@
         <a-box rotation="0 0 90" position="1.5 2 -17.5" scale="4 0.1 5" color="#F991D4"></a-box>
 
         <!-- SALLES DU MAITRE-->
-        <a-box rotation="90 0 90" position="13 2 -10" scale="6 0.1 4" color="#000000"></a-box>
-        <a-box rotation="90 0 0" position="9 2 -13" scale="8 0.1 4" color="#000000"></a-box>
-        <a-box rotation="90 0 0" position="9 2 -7" scale="8 0.1 4" color="#000000"></a-box>
-        <a-box rotation="0 0 0" position="9 0 -10" scale="8 0.1 6" color="#000000"></a-box>
-        <a-box rotation="0 0 0" position="9 4 -10" scale="8 0.1 6" color="#000000"></a-box>
+        <a-box rotation="90 0 90" position="13 2 -10" scale="6 0.1 4" color="#161616"></a-box>
+        <a-box rotation="90 0 0" position="9 2 -13" scale="8 0.1 4" color="#161616"></a-box>
+        <a-box rotation="90 0 0" position="9 2 -7" scale="8 0.1 4" color="#161616"></a-box>
+        <a-box rotation="0 0 0" position="9 0 -10" scale="8 0.1 6" color="#4992B3"></a-box>
+        <a-box rotation="0 0 0" position="9 4 -10" scale="8 0.1 6" color="#161616"></a-box>
 
         <!-- SOL -->
         <a-box rotation="0 0 0" position="0 0 -10" scale="10 0.1 20" color="#4992B3"></a-box>
+        <a-light type="point" color="#FFFFFF" intensity="0.1" position="0 2 -10"></a-light>
 
         <!-- MUR DE DERRIERE -->
         <a-entity position="0 0 -10" rotation="0 0 0">
@@ -149,11 +188,7 @@
 
         <!-- MUR DE GAUCHE -->
         <a-entity position="0 0 -10" rotation="0 90 0">
-            <a-box rotation="90 0 0" position="-2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
-            <a-box rotation="90 0 0" position="2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
-            <a-box rotation="90 0 0" position="0 3.3 -5" scale="2 0.1 1.4" color="#FFF2A2"></a-box>
-            <a-box rotation="0 0 57" position="0.6 2.5 -5" scale="1.1 1.2 0.1" color="#FFF2A2"></a-box>
-            <a-box rotation="0 0 30" position="-0.6 2.5 -5" scale="1.3 1.1 0.1" color="#FFF2A2"></a-box>
+            <a-box rotation="90 0 0" position="0 2 -5" scale="10 0.1 4" color="#FFF2A2"></a-box>
         </a-entity>
 
         <!-- MUR DE DROITE -->
@@ -167,7 +202,6 @@
 
 
         <!-- MUR DE DEVANT -->
-
         <a-entity position="0 0 0" rotation="0 0 0">
             <a-box rotation="90 0 0" position="-2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
             <a-box rotation="90 0 0" position="2.9 2 -5" scale="4.2 0.1 4" color="#FFF2A2"></a-box>
@@ -176,6 +210,10 @@
             <a-box rotation="0 0 30" position="-0.6 2.5 -5" scale="1.3 1.1 0.1" color="#FFF2A2"></a-box>
         </a-entity>
 
+        <!-- MUR SPAWN -->
+        <a-box rotation="0 90 0" position="-5 2 -2.5" scale="5 4 0.15" color="#F991D4"></a-box>
+        <a-box rotation="0 90 0" position="5 2 -2.5" scale="5 4 0.15" color="#F991D4"></a-box>
+        <a-box rotation="0 0 0" position="0 2 0" scale="10 4 0.15" color="#F991D4"></a-box>
 
     </a-scene>
 </body>
